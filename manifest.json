@@ -5,10 +5,21 @@
     "version": "1.0",
     "permissions": [
         "activeTab",
-        "scripting"
+        "scripting",
+        "tabs"
     ],
     "host_permissions": [
         "https://mail.google.com/*"
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "pdf.worker.min.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
     ],
     "background": {
         "service_worker": "background.js"
@@ -24,11 +35,13 @@
     "content_scripts": [
         {
             "matches": [
-                "https://mail.google.com/*"
+                "https://mail.google.com/*",
+                "*://*/*.pdf"
             ],
             "js": [
                 "content-script.js"
-            ]
+            ],
+            "run_at": "document_idle"
         }
     ]
 }

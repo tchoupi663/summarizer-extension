@@ -1,11 +1,11 @@
 const API_KEY = 'AIzaSyCjifYfNLu7y7shBMBA4-kPkyqldOBoodk'; // Replace with your actual Gemini API key
 
+
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === 'summarizeText' && request.text) {
-        console.log("Background received text:", request.text);
         summarizeText(request.text)
             .then((summary) => {
-                sendResponse({ summary: summary });
+                sendResponse({ summary });
             })
             .catch((error) => {
                 console.error("Error summarizing text:", error);
@@ -27,8 +27,7 @@ async function summarizeText(text) {
         contents: [{
             parts: [
                 {
-                    text: `Summarize the text, highlighting any company name, any dates and times. This 
-                    is the text: ${text}`
+                    text: `Summarize the text, be concise: ${text}`
                 }
             ]
         }]

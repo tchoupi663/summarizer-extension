@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const emailContentDiv = document.getElementById("email-content");
+    const contentDiv = document.getElementById("content");
 
-    // Send a message to the content script to get the email body
+    // Send a message to the content script to get the page content (email or PDF)
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         const activeTab = tabs[0];
         chrome.tabs.sendMessage(
@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
             { action: "getSummary" },
             (response) => {
                 if (response && response.summary) {
-                    emailContentDiv.innerHTML = response.summary; // Use innerHTML
+                    contentDiv.innerHTML = response.summary;
                 } else {
-                    emailContentDiv.innerText = "Failed to summarize.";
+                    contentDiv.innerText = "Failed to summarize.";
                 }
             }
         );
