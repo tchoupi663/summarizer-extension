@@ -1,1 +1,1 @@
-console.log("Gmail Summarizer Extension Active.");
+console.log("Synthesia Summarizer Extension Active.");

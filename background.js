@@ -27,7 +27,7 @@ async function summarizeText(text) {
         contents: [{
             parts: [
                 {
-                    text: `Summarize the text, be concise: ${text}`
+                    text: `Summarize the text, be as concise as possible without losing information: ${text}`
                 }
             ]
         }]
