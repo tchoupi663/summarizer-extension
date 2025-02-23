@@ -9,18 +9,7 @@
         "tabs"
     ],
     "host_permissions": [
-        "https://mail.google.com/*",
-        "*://*/*.pdf"
-    ],
-    "web_accessible_resources": [
-        {
-            "resources": [
-                "pdf.worker.min.js"
-            ],
-            "matches": [
-                "<all_urls>"
-            ]
-        }
+        "https://mail.google.com/*"
     ],
     "background": {
         "service_worker": "background.js"
@@ -36,13 +25,11 @@
     "content_scripts": [
         {
             "matches": [
-                "https://mail.google.com/*",
-                "*://*/*.pdf"
+                "https://mail.google.com/*"
             ],
             "js": [
                 "content-script.js"
-            ],
-            "run_at": "document_idle"
+            ]
         }
     ]
 }
