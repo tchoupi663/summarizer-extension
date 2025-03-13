@@ -1,21 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Summarizer</title>
     <style>
-        body { width: 300px; padding: 10px; font-family: Arial, sans-serif; }
-        #summary { margin-top: 10px; white-space: pre-wrap; }
-        textarea { width: 100%; height: 80px; margin-top: 5px; }
-        button { margin-top: 5px; width: 100%; padding: 5px; cursor: pointer; }
+        body {
+            width: 450px;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            resize: both;
+            overflow: auto;
+        }
+
+        #summary {
+            padding: 12px;
+            white-space: pre-wrap;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            margin-top: 5px;
+            border-radius: 5px;
+            resize: none;
+            font-size: 12px;
+        }
+
+        button {
+            margin-top: 5px;
+            width: 100%;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        #summarize-btn {
+            background-color: #fa5919;
+        }
+
+        #summarize-btn:hover {
+            background-color: #f2a07b;
+        }
+
+        #email-summarize-btn {
+            background-color: #fa5919;
+        }
+
+        #email-summarize-btn:hover {
+            background-color: #f2a07b;
+        }
     </style>
 </head>
+
 <body>
-    <div id="summary">No summary yet.</div>
-    <textarea id="input-text" placeholder="Paste text here..."></textarea>
-    <button id="summarize-btn">Summarize</button>
-    <button id="email-summarize-btn" style="display:none;">Summarize Email</button>
+    <div id="summary">Pas de sommaire géneré.</div>
+    <textarea id="input-text" placeholder="Copiez le texte ici..."></textarea>
+    <button id="summarize-btn">Synthétiser</button>
+    <button id="email-summarize-btn" style="display:none;">Synthétiser le mail</button>
     <script src="popup.js"></script>
 </body>
+
 </html>
